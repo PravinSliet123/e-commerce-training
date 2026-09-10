@@ -1,0 +1,19 @@
+.prod_card {}
+
+.prod_image {
+    height: 298px;
+    width: 295px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.prod_image img {
+    height: 100%;
+    width: 100%;
+
+}
+
+.prod_details{
+    margin-top: 15px;
+}

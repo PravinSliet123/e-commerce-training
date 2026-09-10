@@ -1,0 +1,17 @@
+.arrival_heading{
+    font-size: 49px;
+    font-weight: 700;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    text-align: center;
+}
+.top_arrival_container{
+    max-width: 1400px;
+    margin: auto;
+    padding: 10px;
+}
+.top_arrival_prods{
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
