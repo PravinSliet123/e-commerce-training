@@ -7,7 +7,11 @@ import TopArirvals from '../components/Home/TopArirvals'
 
 function Home() {
 
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([
+
+  ])
+  const[query, setQuery] = useState("")
+  console.log("🚀 ~ Home ~ query:", query)
 
 
   //callback or async await
@@ -15,29 +19,44 @@ function Home() {
 
   function getAllProducts() {
     try {
-      fetch("https://dummyjson.com/products")
-        .then((res) => res.json())
-        .then(data => {
-          setProducts(data.products)
+      fetch(`https://dummyjson.com/products/search?q=${query}`, { method: "GET" }).then((res) => {
+        return res.json()
+      }).then(data => {
+        console.log("🚀 ~ getAllProducts ~ data:", data)
+        setProducts(data.products)
 
-        })
+      })
+
+
+      // Asynchronous 
+      //1. callback
+      //2. async/await
+      console.log("🚀 ~ getAllProducts ~ response:", response)
+
     } catch (error) {
 
     }
 
   }
+
   useEffect(() => {
     getAllProducts()
-  }, [])
+
+    return ()=>{
+      console.log("destrying")
+    }
+  }, [query])
 
 
   return (
     <div>
-      <SignupBanner />
-      <Header />
       <Hero />
-      <TopArirvals title={"NEW ARRIVALS"} products={products.slice(0,4)} />
-      <TopArirvals title={"top selling"} products={products.slice(5,9)} />
+
+      <input onChange={(event)=>setQuery(event.target.value)} type="text" placeholder='Search Items' name="" id="" />
+
+
+      <TopArirvals title={"NEW ARRIVALS"} products={products.slice(0, 4)} />
+      <TopArirvals title={"top selling"} products={products.slice(5, 9)} />
     </div>
   )
 }

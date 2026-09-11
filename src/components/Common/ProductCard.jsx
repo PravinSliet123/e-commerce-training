@@ -1,9 +1,8 @@
 import "./productCard.css"
 import tshirt from "../../assets/t-shirt.png"
 function ProductCard(props) {
-  console.log("🚀 ~ ProductCard ~ props:", props)
   return (
-    <div className='prod_card' >
+    <div key={props.product.id} className='prod_card' >
       <div className="prod_image" >
         <img src={props?.product?.thumbnail} alt="tshirt" />
       </div>
