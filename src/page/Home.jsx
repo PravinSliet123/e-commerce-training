@@ -3,7 +3,7 @@ import SignupBanner from '../components/Common/SignupBanner'
 import Header from '../components/Common/Header'
 import Hero from '../components/Home/Hero'
 import TopArirvals from '../components/Home/TopArirvals'
-
+import Partners from "../components/Home/Partners"
 
 function Home() {
 
@@ -51,6 +51,7 @@ function Home() {
   return (
     <div>
       <Hero />
+      <Partners/>
 
       <input onChange={(event)=>setQuery(event.target.value)} type="text" placeholder='Search Items' name="" id="" />
 

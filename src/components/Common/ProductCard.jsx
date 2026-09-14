@@ -1,8 +1,9 @@
 import "./productCard.css"
 import tshirt from "../../assets/t-shirt.png"
+import { Link } from "react-router"
 function ProductCard(props) {
   return (
-    <div key={props.product.id} className='prod_card' >
+    <Link to={`/products/${props.product.id}`} key={props.product.id} className='prod_card' >
       <div className="prod_image" >
         <img src={props?.product?.thumbnail} alt="tshirt" />
       </div>
@@ -22,7 +23,7 @@ function ProductCard(props) {
         <h2>$120</h2>
       </div>
 
-    </div>
+    </Link>
   )
 }
 
